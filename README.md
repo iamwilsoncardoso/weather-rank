@@ -14,11 +14,13 @@ In the project directory you will find two folder:
 weather-rank-api
 ├── src
 │ ├── api -  API integrations
-│ ├── config - Overall config file env variables, port etc..
-      ├──WeatherApi.ts - Concrete API client
-      ├──IWeatherApi.ts - Interface
-      ├──CoordinatesApi.ts - Concrete API client
-      ├──ICoordinatesApi.ts - Interface
+│     ├── integrations - API Integration Open Meteo & Coordinates
+          ├──WeatherApi.ts - Concrete API client
+          ├──IWeatherApi.ts - Interface
+          ├──CoordinatesApi.ts - Concrete API client
+          ├──ICoordinatesApi.ts - Interface
+      ├── interfaces - Integration Interfaces
+      ├── api.ts - Axios instance.
   ├── services -  Service class for handling daily weather-related business logic.
   ├── config - Overall config file env variables, port etc..
   ├── resolvers - resolvers
