@@ -21,7 +21,7 @@ weather-rank-api
           ├──ICoordinatesApi.ts - Interface
       ├── interfaces - Integration Interfaces
       ├── api.ts - Axios instance.
-  ├── services -  Service class for handling daily weather-related business logic.
+      ├── services -  Service class for handling daily weather-related    business logic.
   ├── config - Overall config file env variables, port etc..
   ├── resolvers - resolvers
   ├── schemas - schemas
