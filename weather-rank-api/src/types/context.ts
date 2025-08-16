@@ -1,4 +1,4 @@
-import { WeatherService } from "../api/services/WeatherService ";
+import { WeatherService } from "../api/services/WeatherService";
 
 /**
  * Defines the GraphQL context interface containing service dependencies

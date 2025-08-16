@@ -1,6 +1,6 @@
 import { ApolloServer } from "apollo-server";
 import { Context } from "./types/context";
-import { WeatherService } from "./api/services/WeatherService ";
+import { WeatherService } from "./api/services/WeatherService";
 import config from "./config/config";
 import resolvers from "./resolvers/resolvers";
 import { readFileSync } from "fs";
