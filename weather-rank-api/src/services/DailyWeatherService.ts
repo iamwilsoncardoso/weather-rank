@@ -9,6 +9,7 @@ import { IDailyWeather } from "../api/interfaces/IDailyWeather";
  * @class DailyWeatherService
  */
 export class DailyWeatherService {
+  //DI
   private weatherApi: IWeatherApi;
 
   /**
