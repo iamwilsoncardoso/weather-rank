@@ -1,0 +1,28 @@
+"""
+Daily weather forecast data
+"""
+type DailyWeather {
+  """
+  Maximum daily temperatures at 2 meters above ground
+  Measured in °C
+  """
+  temperature_2m_max: [Float]!
+
+  """
+  Daily snowfall accumulation
+  Measured in cm
+  """
+  snowfall_sum: [Float]!
+
+  """
+  Daily precipitation amount
+  Measured in mm
+  """
+  precipitation_sum: [Float]!
+
+  """
+  Mean daily cloud cover percentage
+  Range: 0-100%
+  """
+  cloud_cover_mean: [Float]!
+}

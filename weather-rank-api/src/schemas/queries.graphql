@@ -1,0 +1,16 @@
+#import DailyWeather from 'types.graphql'
+
+type Query {
+  """
+  Get weather forecast data for a specific city
+
+  Parameters:
+    - city: Name of the city to get weather for (required)
+
+  Returns: Daily weather forecast data
+  Throws:
+    - CityNotFound: When the specified city doesn't exist
+    - WeatherDataUnavailable: When weather data can't be retrieved
+  """
+  getWeatherData(city: String!): DailyWeather!
+}

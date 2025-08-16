@@ -3,13 +3,13 @@ import { Context } from "./types/context";
 import { WeatherService } from "./api/services/WeatherService";
 import config from "./config/config";
 import resolvers from "./resolvers/resolvers";
-import { readFileSync } from "fs";
 import { join } from "path";
+import { loadSchemaSync } from "@graphql-tools/load";
+import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 
-const schemas = readFileSync(
-  join(__dirname, "./schemas/schema.graphql"),
-  "utf8"
-);
+const schemas = loadSchemaSync(join(__dirname, "./schemas/schema.graphql"), {
+  loaders: [new GraphQLFileLoader()],
+});
 
 async function startServer(schemas: any, resolvers: any) {
   //DI
