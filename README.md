@@ -160,8 +160,6 @@ DeepSeek assisted in researching and understanding the threshold for snowfall, r
 
 - Interfaces over classes: Lightweight contracts where inheritance isn't needed.
 
-In the service layer (WeatherService) getWeatherData method I am return any, this was done in purpose as Iam focuses on raw data fetching
-
 - GraphQL resolvers handle data transformation and shaping with the appropriate type.
 
 - This keeps the service layer simple and focused
