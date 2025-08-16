@@ -1,5 +1,5 @@
-import { geocodingApi } from "../api";
-import { ICoordinates } from "../interfaces/ICoordinates";
+import { geocodingApi } from "../../api";
+import { ICoordinates } from "../../interfaces/ICoordinates";
 import { ICoordinatesApi } from "./ICoordinatesApi";
 
 /**

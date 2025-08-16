@@ -1,4 +1,4 @@
-import { ICoordinates } from "../interfaces/ICoordinates";
+import { ICoordinates } from "../../interfaces/ICoordinates";
 
 /**
  * Interface defining the contract for coordinates integration operations

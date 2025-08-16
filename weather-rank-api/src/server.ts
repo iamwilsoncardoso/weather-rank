@@ -6,8 +6,8 @@ import { join } from "path";
 import { loadSchemaSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { DailyWeatherService } from "./services/DailyWeatherService";
-import { CoordinatesApi } from "./api/integrations/CoordinatesApi";
-import { WeatherApi } from "./api/integrations/WeatherApi";
+import { CoordinatesApi } from "./api/integrations/CoordinatesApi/CoordinatesApi";
+import { WeatherApi } from "./api/integrations/WeatherApi/WeatherApi";
 
 const schemas = loadSchemaSync(join(__dirname, "./schemas/schema.graphql"), {
   loaders: [new GraphQLFileLoader()],

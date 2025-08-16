@@ -1,4 +1,4 @@
-import { IDailyWeather } from "../interfaces/IDailyWeather";
+import { IDailyWeather } from "../../interfaces/IDailyWeather";
 
 /**
  * Interface defining the contract for weather integration operations

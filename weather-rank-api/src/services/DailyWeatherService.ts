@@ -1,4 +1,4 @@
-import { IWeatherApi } from "../api/integrations/IWeatherApi";
+import { IWeatherApi } from "../api/integrations/WeatherApi/IWeatherApi";
 import { IDailyWeather } from "../api/interfaces/IDailyWeather";
 
 /**

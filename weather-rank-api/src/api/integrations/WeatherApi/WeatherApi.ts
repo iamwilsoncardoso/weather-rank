@@ -1,6 +1,6 @@
-import { weatherApi } from "../api";
-import { IDailyWeather } from "../interfaces/IDailyWeather";
-import { ICoordinatesApi } from "./ICoordinatesApi";
+import { weatherApi } from "../../api";
+import { IDailyWeather } from "../../interfaces/IDailyWeather";
+import { ICoordinatesApi } from "../CoordinatesApi/ICoordinatesApi";
 import { IWeatherApi } from "./IWeatherApi";
 
 /**
