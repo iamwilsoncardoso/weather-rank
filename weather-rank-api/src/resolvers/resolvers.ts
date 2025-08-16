@@ -12,7 +12,7 @@ const resolvers = {
      * @param {unknown} _parent - The parent resolver
      * @param {{ city: string }} args - Query arguments
      * @param {Context} context - GraphQL context containing services
-     * @returns {Promise<Object>} Promise resolving to weather data
+     * @returns {Promise<IDailyWeather>} Promise resolving to weather data
      * @throws {Error} When weather data cannot be fetched
      * @memberof resolvers.Query
      */
