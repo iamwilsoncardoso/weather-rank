@@ -14,7 +14,7 @@ const schemas = loadSchemaSync(join(__dirname, "./schemas/schema.graphql"), {
 });
 
 async function startServer(schemas: any, resolvers: any) {
-  //DI
+  //Instantiate for DI
   const coordinatesApi = new CoordinatesApi();
   const weatherApi = new WeatherApi(coordinatesApi);
 
