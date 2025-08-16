@@ -22,7 +22,6 @@ async function startServer(schemas: any, resolvers: any) {
     context: (): Context => ({
       weatherService,
     }),
-    cors: config.cors,
   });
 
   const { url } = await server.listen({ port: config.port });
