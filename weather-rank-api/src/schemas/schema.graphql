@@ -1,0 +1,43 @@
+"""
+Daily weather forecast data
+"""
+type DailyWeather {
+  """
+  Maximum daily temperatures at 2 meters above ground
+  Measured in °C
+  """
+  temperature_2m_max: [Float]!
+
+  """
+  Daily snowfall accumulation
+  Measured in cm
+  """
+  snowfall_sum: [Float]!
+
+  """
+  Daily precipitation amount
+  Measured in mm
+  """
+  precipitation_sum: [Float]!
+
+  """
+  Mean daily cloud cover percentage
+  Range: 0-100%
+  """
+  cloud_cover_mean: [Float]!
+}
+
+type Query {
+  """
+  Get weather forecast data for a specific city
+
+  Parameters:
+    - city: Name of the city to get weather for (required)
+
+  Returns: Daily weather forecast data
+  Throws:
+    - CityNotFound: When the specified city doesn't exist
+    - WeatherDataUnavailable: When weather data can't be retrieved
+  """
+  getWeatherData(city: String!): DailyWeather!
+}
