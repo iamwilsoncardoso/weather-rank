@@ -1,4 +1,5 @@
 import { weatherApi } from "../api";
+import { IDailyWeather } from "../interfaces/IDailyWeather";
 import { ICoordinatesApi } from "./ICoordinatesApi";
 import { IWeatherApi } from "./IWeatherApi";
 
@@ -22,11 +23,11 @@ export class WeatherApi implements IWeatherApi {
   /**
    * Retrieves comprehensive weather data for a specified city
    * @param {string} city - The city name to get weather for
-   * @returns {Promise<any>} Promise resolving to weather data object
+   * @returns {Promise<IDailyWeather>} Promise resolving to weather data object
    * @throws {Error} When weather data cannot be fetched
    * @memberof WeatherApi
    */
-  async getWeatherData(city: string): Promise<any> {
+  async getWeatherData(city: string): Promise<IDailyWeather> {
     //return any in purpose.
     const { latitude, longitude } = await this.coordinatesApi.getCoordinates(
       city
@@ -50,7 +51,13 @@ export class WeatherApi implements IWeatherApi {
     try {
       const response = await weatherApi.get("/forecast", { params });
 
-      return response.data.daily; //I have considered returning IDailyWeather, however transformation of data can be done by graphQL types.
+      return {
+        temperature_2m_max: response.data.daily.temperature_2m_max,
+        snowfall_sum: response.data.daily.snowfall_sum,
+        precipitation_sum: response.data.daily.precipitation_sum,
+        cloud_cover_mean: response.data.daily.cloud_cover_mean,
+      };
+      return response.data.daily;
     } catch (error) {
       console.error("Weather data error:", error);
       throw new Error("Failed to fetch weather data");

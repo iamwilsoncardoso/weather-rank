@@ -1,4 +1,5 @@
 import { IWeatherApi } from "../api/integrations/IWeatherApi";
+import { IDailyWeather } from "../api/interfaces/IDailyWeather";
 
 /**
  * Service class for handling daily weather-related business logic.
@@ -25,12 +26,12 @@ export class DailyWeatherService {
    * to include business logic (e.g., caching, validation, or DB integration).
    *
    * @param {string} city - The city name to fetch weather data for.
-   * @returns {Promise<any>} Promise resolving to the daily weather data.
+   * @returns {Promise<IDailyWeather>} Promise resolving to the daily weather data.
    * @throws {Error} If the weather data cannot be retrieved.
    * @async
    * @method getDailyWeather
    */
-  async getDailyWeather(city: string): Promise<any> {
+  async getDailyWeather(city: string): Promise<IDailyWeather> {
     try {
       return await this.weatherApi.getWeatherData(city);
     } catch (error) {
