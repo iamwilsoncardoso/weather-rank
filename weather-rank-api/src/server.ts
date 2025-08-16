@@ -1,11 +1,13 @@
 import { ApolloServer } from "apollo-server";
 import { Context } from "./types/context";
-import { WeatherService } from "./api/services/WeatherService";
 import config from "./config/config";
 import resolvers from "./resolvers/resolvers";
 import { join } from "path";
 import { loadSchemaSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
+import { DailyWeatherService } from "./services/DailyWeatherService";
+import { CoordinatesApi } from "./api/integrations/CoordinatesApi";
+import { WeatherApi } from "./api/integrations/WeatherApi";
 
 const schemas = loadSchemaSync(join(__dirname, "./schemas/schema.graphql"), {
   loaders: [new GraphQLFileLoader()],
@@ -13,14 +15,18 @@ const schemas = loadSchemaSync(join(__dirname, "./schemas/schema.graphql"), {
 
 async function startServer(schemas: any, resolvers: any) {
   //DI
-  const weatherService = new WeatherService();
+  const coordinatesApi = new CoordinatesApi();
+  const weatherApi = new WeatherApi(coordinatesApi);
+
+  // Initialize DailyWeatherService with WeatherApi
+  const dailyService = new DailyWeatherService(weatherApi);
 
   //Init Apollo Server
   const server = new ApolloServer({
     typeDefs: schemas,
     resolvers: resolvers,
     context: (): Context => ({
-      weatherService,
+      dailyService,
     }),
   });
 

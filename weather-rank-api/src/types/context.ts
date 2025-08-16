@@ -1,4 +1,4 @@
-import { WeatherService } from "../api/services/WeatherService";
+import { DailyWeatherService } from "../services/DailyWeatherService";
 
 /**
  * Defines the GraphQL context interface containing service dependencies
@@ -7,9 +7,9 @@ import { WeatherService } from "../api/services/WeatherService";
  */
 export interface Context {
   /**
-   * Weather service instance for fetching weather data
-   * @type {WeatherService}
+   * Daily Weather service instance for fetching weather data
+   * @type {DailyWeatherService}
    * @memberof Context
    */
-  weatherService: WeatherService;
+  dailyService: DailyWeatherService;
 }

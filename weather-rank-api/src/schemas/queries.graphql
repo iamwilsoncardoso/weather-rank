@@ -12,5 +12,5 @@ type Query {
     - CityNotFound: When the specified city doesn't exist
     - WeatherDataUnavailable: When weather data can't be retrieved
   """
-  getWeatherData(city: String!): DailyWeather!
+  getDailyWeather(city: String!): DailyWeather!
 }

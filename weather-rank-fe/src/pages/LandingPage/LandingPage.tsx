@@ -6,10 +6,10 @@ import { IActivityRanking } from "interfaces/IActivityRanking";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { IDailyWeatherQueryResponse } from "interfaces/IDailyWeatherQueryResponse";
-import { GET_WEATHER_DATA } from "graphql/queries";
 import { calculateRankings } from "services/calculateRankings";
 import CustomTextField from "components/common/CustomTextField/CustomTextField";
 import SearchIcon from "@mui/icons-material/Search";
+import { GET_DAILY_WEATHER_DATA } from "graphql/queries";
 
 export default function LandingPage() {
   const [rankings, setRankings] = useState<IActivityRanking | null>(null);
@@ -17,12 +17,12 @@ export default function LandingPage() {
   const [city, setCity] = useState<string>("");
   const [errorValidation, setErrorValidation] = useState<string | null>(null);
 
-  const [getWeatherData, { loading, error, data }] =
-    useLazyQuery<IDailyWeatherQueryResponse>(GET_WEATHER_DATA);
+  const [getDailyWeather, { loading, error, data }] =
+    useLazyQuery<IDailyWeatherQueryResponse>(GET_DAILY_WEATHER_DATA);
 
   useEffect(() => {
-    if (data?.getWeatherData) {
-      setRankings(calculateRankings(data?.getWeatherData));
+    if (data?.getDailyWeather) {
+      setRankings(calculateRankings(data?.getDailyWeather));
     }
   }, [data]);
 
@@ -40,7 +40,7 @@ export default function LandingPage() {
       setErrorValidation("Please enter a city name");
       return;
     }
-    getWeatherData({ variables: { city: city } });
+    getDailyWeather({ variables: { city: city } });
   };
 
   return (

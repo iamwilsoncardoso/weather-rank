@@ -19,6 +19,16 @@ weather-rank-api
 │ ├── schemas - schemas
 │ ├── server.ts - Apollo server bootstrap
 
+
+/src
+  /api                # API integrations
+    WeatherApi.ts     # Concrete API client
+    IWeatherApi.ts    # Interface
+  /services           # Business logic
+    DailyWeather.ts   # Consumes WeatherApi
+  /interfaces         # Shared interfaces
+    ICoordinates.ts
+
 ```
 
 #### Start project:
