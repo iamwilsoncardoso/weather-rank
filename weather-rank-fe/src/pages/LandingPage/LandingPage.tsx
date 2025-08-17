@@ -6,7 +6,7 @@ import { IActivityRanking } from "interfaces/IActivityRanking";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { IDailyWeatherQueryResponse } from "interfaces/IDailyWeatherQueryResponse";
-import { calculateRankings } from "services/calculateRankings";
+import { calculateRankings } from "utils/calculateRankings";
 import CustomTextField from "components/common/CustomTextField/CustomTextField";
 import SearchIcon from "@mui/icons-material/Search";
 import { GET_DAILY_WEATHER_DATA } from "graphql/queries";
