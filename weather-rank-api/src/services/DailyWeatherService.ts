@@ -1,5 +1,6 @@
 import { IWeatherApi } from "../api/integrations/WeatherApi/IWeatherApi";
 import { IDailyWeather } from "../api/interfaces/IDailyWeather";
+import { IDailyWeatherService } from "./IDailyWeatherService";
 
 /**
  * Service class for handling daily weather-related business logic.
@@ -8,7 +9,7 @@ import { IDailyWeather } from "../api/interfaces/IDailyWeather";
  *
  * @class DailyWeatherService
  */
-export class DailyWeatherService {
+export class DailyWeatherService implements IDailyWeatherService {
   //DI
   private weatherApi: IWeatherApi;
 
