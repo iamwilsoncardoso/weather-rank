@@ -8,6 +8,7 @@ import { IDailyWeatherService } from "./IDailyWeatherService";
  * and potentially integrating with a database for persistence or caching.
  *
  * @class DailyWeatherService
+ * @implements {IDailyWeatherService}
  */
 export class DailyWeatherService implements IDailyWeatherService {
   //DI
