@@ -180,4 +180,4 @@ Performance:
 
 ### NOTE
 
-The snowfall_sum array is returns 0 elements [0,0,0,0,0] for any locations, I believe there might something wrong with the Open Meteo API.
+The snowfall_sum array returns 0 elements [0,0,0,0,0] for any locations, I believe there might something wrong with the Open Meteo API.
